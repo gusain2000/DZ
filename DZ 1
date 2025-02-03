@@ -1,0 +1,19 @@
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'Academy')    CREATE DATABASE Academy;
+GO
+USE Academy;
+CREATE TABLE Teachers
+(    [Id] int identity(1, 1) PRIMARY KEY NOT NULL,
+    [Name] nvarchar(max) NOT NULL CHECK (LEN([Name]) >= 1),    [Surname] nvarchar(max) NOT NULL CHECK (LEN([Surname]) >= 1),
+    [EmploymentDate] date NOT NULL CHECK (EmploymentDate >= '1990-01-01'),    [Premium] money NOT NULL DEFAULT 0 CHECK (Premium >= 0),
+    [Salary] money NOT NULL CHECK (Salary > 0));
+CREATE TABLE Groups
+(
+    [Id] int identity(1, 1) PRIMARY KEY NOT NULL,    [Name] nvarchar(10) UNIQUE NOT NULL CHECK (LEN([Name]) >= 1),
+    [Rating] int NOT NULL CHECK (Rating >= 0 AND Rating <= 5),    [Year] int NOT NULL CHECK (Year >= 1 AND Year <= 5)
+);
+CREATE TABLE Departments(
+    [Id] int identity(1, 1) PRIMARY KEY NOT NULL,    [Name] nvarchar(100) UNIQUE NOT NULL CHECK (LEN([Name]) >= 1),
+    [Financing] money NOT NULL DEFAULT 0 CHECK (Financing >= 0));
+CREATE TABLE Faculties
+(    [Id] int identity(1, 1) PRIMARY KEY NOT NULL,
+    [Name] nvarchar(100) UNIQUE NOT NULL CHECK (LEN([Name]) >= 1));
