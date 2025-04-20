@@ -1,0 +1,14 @@
+C:\Users\gusai\RiderProjects\Syncs\Syncs\bin\Debug\net9.0\Syncs.exe
+C:\Users\gusai\RiderProjects\Syncs\Syncs\bin\Debug\net9.0\Syncs.deps.json
+C:\Users\gusai\RiderProjects\Syncs\Syncs\bin\Debug\net9.0\Syncs.runtimeconfig.json
+C:\Users\gusai\RiderProjects\Syncs\Syncs\bin\Debug\net9.0\Syncs.dll
+C:\Users\gusai\RiderProjects\Syncs\Syncs\bin\Debug\net9.0\Syncs.pdb
+C:\Users\gusai\RiderProjects\Syncs\Syncs\obj\Debug\net9.0\Syncs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusai\RiderProjects\Syncs\Syncs\obj\Debug\net9.0\Syncs.AssemblyInfoInputs.cache
+C:\Users\gusai\RiderProjects\Syncs\Syncs\obj\Debug\net9.0\Syncs.AssemblyInfo.cs
+C:\Users\gusai\RiderProjects\Syncs\Syncs\obj\Debug\net9.0\Syncs.csproj.CoreCompileInputs.cache
+C:\Users\gusai\RiderProjects\Syncs\Syncs\obj\Debug\net9.0\Syncs.dll
+C:\Users\gusai\RiderProjects\Syncs\Syncs\obj\Debug\net9.0\refint\Syncs.dll
+C:\Users\gusai\RiderProjects\Syncs\Syncs\obj\Debug\net9.0\Syncs.pdb
+C:\Users\gusai\RiderProjects\Syncs\Syncs\obj\Debug\net9.0\Syncs.genruntimeconfig.cache
+C:\Users\gusai\RiderProjects\Syncs\Syncs\obj\Debug\net9.0\ref\Syncs.dll
