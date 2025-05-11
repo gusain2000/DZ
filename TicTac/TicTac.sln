@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTac", "TicTac\TicTac.csproj", "{7ED687B0-7281-4D72-B658-6FD1A1941088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacGuest", "TicTacGuest\TicTacGuest.csproj", "{E806968A-528F-4136-928C-46069148AD64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ED687B0-7281-4D72-B658-6FD1A1941088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED687B0-7281-4D72-B658-6FD1A1941088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED687B0-7281-4D72-B658-6FD1A1941088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED687B0-7281-4D72-B658-6FD1A1941088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E806968A-528F-4136-928C-46069148AD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E806968A-528F-4136-928C-46069148AD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E806968A-528F-4136-928C-46069148AD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E806968A-528F-4136-928C-46069148AD64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

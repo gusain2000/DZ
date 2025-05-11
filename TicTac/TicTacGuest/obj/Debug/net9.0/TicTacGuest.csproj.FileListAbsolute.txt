@@ -1,0 +1,14 @@
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\bin\Debug\net9.0\TicTacGuest.exe
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\bin\Debug\net9.0\TicTacGuest.deps.json
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\bin\Debug\net9.0\TicTacGuest.runtimeconfig.json
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\bin\Debug\net9.0\TicTacGuest.dll
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\bin\Debug\net9.0\TicTacGuest.pdb
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\obj\Debug\net9.0\TicTacGuest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\obj\Debug\net9.0\TicTacGuest.AssemblyInfoInputs.cache
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\obj\Debug\net9.0\TicTacGuest.AssemblyInfo.cs
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\obj\Debug\net9.0\TicTacGuest.csproj.CoreCompileInputs.cache
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\obj\Debug\net9.0\TicTacGuest.dll
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\obj\Debug\net9.0\refint\TicTacGuest.dll
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\obj\Debug\net9.0\TicTacGuest.pdb
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\obj\Debug\net9.0\TicTacGuest.genruntimeconfig.cache
+C:\Users\gusai\RiderProjects\TicTac\TicTacGuest\obj\Debug\net9.0\ref\TicTacGuest.dll
