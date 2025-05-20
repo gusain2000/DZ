@@ -1,0 +1,14 @@
+C:\Users\gusai\RiderProjects\FTP1\FTP1\bin\Debug\net9.0\FTP1.exe
+C:\Users\gusai\RiderProjects\FTP1\FTP1\bin\Debug\net9.0\FTP1.deps.json
+C:\Users\gusai\RiderProjects\FTP1\FTP1\bin\Debug\net9.0\FTP1.runtimeconfig.json
+C:\Users\gusai\RiderProjects\FTP1\FTP1\bin\Debug\net9.0\FTP1.dll
+C:\Users\gusai\RiderProjects\FTP1\FTP1\bin\Debug\net9.0\FTP1.pdb
+C:\Users\gusai\RiderProjects\FTP1\FTP1\obj\Debug\net9.0\FTP1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusai\RiderProjects\FTP1\FTP1\obj\Debug\net9.0\FTP1.AssemblyInfoInputs.cache
+C:\Users\gusai\RiderProjects\FTP1\FTP1\obj\Debug\net9.0\FTP1.AssemblyInfo.cs
+C:\Users\gusai\RiderProjects\FTP1\FTP1\obj\Debug\net9.0\FTP1.csproj.CoreCompileInputs.cache
+C:\Users\gusai\RiderProjects\FTP1\FTP1\obj\Debug\net9.0\FTP1.dll
+C:\Users\gusai\RiderProjects\FTP1\FTP1\obj\Debug\net9.0\refint\FTP1.dll
+C:\Users\gusai\RiderProjects\FTP1\FTP1\obj\Debug\net9.0\FTP1.pdb
+C:\Users\gusai\RiderProjects\FTP1\FTP1\obj\Debug\net9.0\FTP1.genruntimeconfig.cache
+C:\Users\gusai\RiderProjects\FTP1\FTP1\obj\Debug\net9.0\ref\FTP1.dll
