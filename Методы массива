@@ -1,0 +1,92 @@
+1)
+function getSpecialNumbers(arr) {
+  return arr.filter(num => num % 3 === 0);
+}
+2)
+function sortDesc(arr) {
+  return [...arr].sort((a, b) => b - a);
+}
+3)
+function flatArray(arr) {
+  return arr.flat();
+}
+4)
+function getMessagesForBestStudents(allStudents, failedStudents) {
+  return allStudents
+    .filter(name => !failedStudents.includes(name))
+    .map(name => `Good job, ${name}`);
+}
+5)
+5.1)
+function isPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+function getPrimesFromArray(arr) {
+  return arr.filter(isPrime);
+}
+5.3)
+const numbers = [4, 7, 2, 7, 9, 2, 4, 1, 3, 9, 5, 1, 6];
+
+function getUniqueValues(arr) {
+  return [...new Set(arr)];
+}
+
+const uniqueNumbers = getUniqueValues(numbers);
+console.log(uniqueNumbers);
+5.4)
+function groupStudentsByFirstLetter(names) {
+  return names.reduce((acc, name) => {
+    const firstLetter = name[0].toUpperCase();
+    acc[firstLetter] = acc[firstLetter] || [];
+    acc[firstLetter].push(name);
+    return acc;
+  }, {});
+}
+5.5)
+function findMostFrequent(arr) {
+  const count = {};
+  let max = 0;
+  let mostFrequent = null;
+
+  for (const num of arr) {
+    count[num] = (count[num] || 0) + 1;
+    if (count[num] > max) {
+      max = count[num];
+      mostFrequent = num;
+    }
+  }
+
+  return { value: mostFrequent, count: max };
+}
+5.6)
+function oddSquares(arr) {
+  return arr.filter(num => num % 2 !== 0).map(num => num * num);
+}
+5.7)
+function oddSquares(arr) {
+  return arr.filter(num => num % 2 !== 0).map(num => num * num);
+}
+5.8)
+function areAllStrings(arr) {
+  return arr.every(item => typeof item === 'string');
+}
+5.9)
+function formatStudents(names) {
+  return `Students: ${names.join(', ')}`;
+}
+5.10)
+function average(arr) {
+  if (arr.length === 0) return null;
+
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  return sum / arr.length;
+}
