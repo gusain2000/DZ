@@ -1,0 +1,388 @@
+1)
+const student = {
+  firstName: "Əli",
+  lastName: "Məmmədov",
+  age: 20,
+  major: "Computer Science",
+  course: 2, // курс от 1 до 4
+
+  // Метод для полного имени
+  fullname() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+
+  // Метод для расчёта года выпуска
+  graduate_year() {
+    const totalYears = 4;
+    const remainingYears = totalYears - this.course;
+    const currentYear = new Date().getFullYear();
+    return currentYear + remainingYears;
+  }
+};
+console.log(student.fullname());
+console.log(student.graduate_year()); 
+2)
+const products = [
+  { name: "Laptop", price: 1200, category: "electronics", inStock: true },
+  { name: "Phone", price: 800, category: "electronics", inStock: false },
+  { name: "Table", price: 300, category: "furniture", inStock: true },
+  { name: "Book", price: 25, category: "education", inStock: true },
+  { name: "Computer", price: 1500, category: "electronics", inStock: true }
+];
+
+const available = products.filter(product => product.inStock);
+console.log(available);
+
+const cheapProducts = products.filter(product => product.price < 500);
+console.log(cheapProducts);
+
+const electronics = products.filter(product => product.category === "electronics");
+console.log(electronics);
+
+const mostExpensive = products.reduce((max, product) =>
+  product.price > max.price ? product : max
+);
+console.log(mostExpensive);
+
+const categoryCount = products.reduce((acc, product) => {
+  acc[product.category] = (acc[product.category] || 0) + 1;
+  return acc;
+}, {});
+console.log(categoryCount);
+
+3)
+function createBankAccount(accountNumber, ownerName) {
+  return {
+    accountNumber: accountNumber,
+    ownerName: ownerName,
+    balance: 0,
+    history: [],
+
+    deposit(amount) {
+      this.balance += amount;
+      this.history.push("Deposit: +" + amount);
+    },
+
+    withdraw(amount) {
+      if (this.balance >= amount) {
+        this.balance -= amount;
+        this.history.push("Withdraw: -" + amount);
+      }
+    },
+
+    transfer(toAccount, amount) {
+      if (this.balance >= amount) {
+        this.balance -= amount;
+        toAccount.balance += amount;
+        this.history.push("Transfer: -" + amount + " -> " + toAccount.accountNumber);
+        toAccount.history.push("Received: +" + amount + " from " + this.accountNumber);
+      }
+    },
+
+    get accountInfo() {
+      return "Account: " + this.accountNumber + "\n" +
+             "Owner: " + this.ownerName + "\n" +
+             "Balance: " + this.balance + "\n" +
+             "History:\n" + this.history.join("\n");
+    }
+  };
+}
+
+// Example usage:
+const account1 = createBankAccount("111", "Huseyn");
+const account2 = createBankAccount("222", "Sabina");
+
+account1.deposit(1000);
+account1.withdraw(200);
+account1.transfer(account2, 300);
+
+console.log(account1.accountInfo);
+console.log(account2.accountInfo);
+4)
+const library = {
+  books: [],
+
+  addBook(title, author, year, isbn) {
+    const book = { title, author, year, isbn };
+    this.books.push(book);
+  },
+
+  searchBook(query) {
+    return this.books.filter(book =>
+      book.title.toLowerCase().includes(query.toLowerCase()) ||
+      book.author.toLowerCase().includes(query.toLowerCase())
+    );
+  },
+
+  filterByAuthor(author) {
+    return this.books.filter(book => book.author === author);
+  },
+
+  filterByYearRange(minYear, maxYear) {
+    return this.books.filter(book => book.year >= minYear && book.year <= maxYear);
+  },
+
+  statistics() {
+    const total = this.books.length;
+    if (total === 0) return { total: 0, oldest: null, newest: null };
+
+    const years = this.books.map(book => book.year);
+    const oldest = Math.min(...years);
+    const newest = Math.max(...years);
+    return { total, oldest, newest };
+  }
+};
+
+library.addBook("1984", "George Orwell", 1949, "ISBN1984");
+library.addBook("Кёроглы", "Народное творчество", 1800, "ISBN1800");
+library.addBook("Аршин Мал Алан", "Узеира Гаджибейли", 1913, "ISBN1913");
+
+console.log("Поиск по 'orwell':", library.searchBook("orwell"));
+console.log("Книги Узеира Гаджибейли:", library.filterByAuthor("Узеира Гаджибейли"));
+console.log("Книги между 1800 и 1950:", library.filterByYearRange(1800, 1950));
+console.log("Статистика:", library.statistics());
+
+5)
+const shoppingCart = {
+  products: [
+    { name: "Apple iPhone", price: 1000, quantity: 1, taxPercent: 18 },
+    { name: "Samsung TV", price: 800, quantity: 2, taxPercent: 18 },
+    { name: "Book", price: 20, quantity: 3, taxPercent: 0 }
+  ],
+
+  // Общая цена без налога
+  calculateTotalPrice() {
+    return this.products.reduce((total, product) =>
+      total + product.price * product.quantity, 0);
+  },
+
+  calculateTax() {
+    return this.products.reduce((taxSum, product) =>
+      taxSum + (product.price * product.quantity * product.taxPercent / 100), 0);
+  },
+
+  totalPriceWithTax() {
+    return this.calculateTotalPrice() + this.calculateTax();
+  },
+
+  addProduct(product) {
+    const existing = this.products.find(p => p.name === product.name);
+    if (existing) {
+      existing.quantity += product.quantity;
+    } else {
+      this.products.push(product);
+    }
+  },
+
+  removeProduct(productName) {
+    this.products = this.products.filter(p => p.name !== productName);
+  },
+
+  clearCart() {
+    this.products = [];
+  }
+};
+6)
+const users = {
+  "user1": { name: "Ali", age: 25, city: "Baku", salary: 1500 },
+  "user2": { name: "Leyla", age: 30, city: "Ganja", salary: 1800 },
+  "user3": { name: "Rashad", age: 28, city: "Baku", salary: 2000 },
+  "user4": { name: "Nigar", age: 35, city: "Sumgait", salary: 2200 }
+};
+
+const usersArray = [];
+for (let key in users) {
+  usersArray.push(users[key]);
+}
+console.log("Массив пользователей:", usersArray);
+
+const groupedByCity = {};
+for (let i = 0; i < usersArray.length; i++) {
+  const user = usersArray[i];
+  const city = user.city;
+  if (!groupedByCity[city]) {
+    groupedByCity[city] = [];
+  }
+  groupedByCity[city].push(user);
+}
+console.log("Пользователи по городам:", groupedByCity);
+
+let totalSalary = 0;
+for (let i = 0; i < usersArray.length; i++) {
+  totalSalary += usersArray[i].salary;
+}
+const avgSalary = totalSalary / usersArray.length;
+console.log("Средняя зарплата:", avgSalary);
+
+let highestSalaryUser = usersArray[0];
+for (let i = 1; i < usersArray.length; i++) {
+  if (usersArray[i].salary > highestSalaryUser.salary) {
+    highestSalaryUser = usersArray[i];
+  }
+}
+console.log("Пользователь с самой высокой зарплатой:", highestSalaryUser);
+
+const under30 = [];
+for (let i = 0; i < usersArray.length; i++) {
+  if (usersArray[i].age < 30) {
+    under30.push(usersArray[i]);
+  }
+}
+console.log("Пользователи младше 30:", under30);
+
+const namesOver1800 = [];
+for (let i = 0; i < usersArray.length; i++) {
+  if (usersArray[i].salary > 1800) {
+    namesOver1800.push(usersArray[i].name);
+  }
+}
+console.log("Имена с зарплатой больше 1800:", namesOver1800);
+
+7)
+const configuration = {
+  // Значения по умолчанию
+  defaultSettings: {
+    language: "az",
+    theme: "light",
+    notifications: true,
+    autosave: 10, // минут
+    fontSize: 14
+  },
+
+  userSettings: {},
+
+  setSetting(key, value) {
+    this.userSettings[key] = value;
+  },
+
+  getSetting(key) {
+    if (this.userSettings.hasOwnProperty(key)) {
+      return this.userSettings[key];
+    } else {
+      return this.defaultSettings[key];
+    }
+  },
+
+  resetSettings() {
+    this.userSettings = {};
+  },
+
+  getAllSettings() {
+    const result = {};
+
+    for (let key in this.defaultSettings) {
+      result[key] = this.defaultSettings[key];
+    }
+
+    for (let key in this.userSettings) {
+      result[key] = this.userSettings[key];
+    }
+
+    return result;
+  },
+
+8)
+const textAnalyzer = {
+  text: "",
+
+  setText(newText) {
+    this.text = newText;
+    return this;
+  },
+
+
+  letterCount() {
+    let count = 0;
+    for (let i = 0; i < this.text.length; i++) {
+      const char = this.text[i];
+      if (char.match(/[a-zа-яё]/i)) {
+        count++;
+      }
+    }
+    return count;
+  },
+
+  wordCount() {
+    const words = this.text.trim().split(/\s+/);
+    return this.text.trim() === "" ? 0 : words.length;
+  },
+
+  sentenceCount() {
+    let count = 0;
+    for (let i = 0; i < this.text.length; i++) {
+      if ([".", "!", "?"].includes(this.text[i])) {
+        count++;
+      }
+    }
+    return count;
+  },
+
+  longestWord() {
+    const words = this.text.trim().split(/\s+/);
+    let longest = "";
+    for (let i = 0; i < words.length; i++) {
+      const clean = words[i].replace(/[^\wа-яё]/gi, "");
+      if (clean.length > longest.length) {
+        longest = clean;
+      }
+    }
+    return longest;
+  },
+
+  wordFrequency() {
+    const freq = {};
+    const words = this.text.toLowerCase().split(/\s+/);
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i].replace(/[^\wа-яё]/gi, "");
+      if (word) {
+        if (!freq[word]) freq[word] = 0;
+        freq[word]++;
+      }
+    }
+    return freq;
+  },
+
+  mostFrequentWord() {
+    const freq = this.wordFrequency();
+    let maxCount = 0;
+    let maxWord = "";
+    for (let word in freq) {
+      if (freq[word] > maxCount) {
+        maxCount = freq[word];
+        maxWord = word;
+      }
+    }
+    return maxWord;
+  },
+
+  averageWordLength() {
+    const words = this.text.trim().split(/\s+/);
+    if (words.length === 0 || this.text.trim() === "") return 0;
+
+    let totalLength = 0;
+    let validWords = 0;
+    for (let i = 0; i < words.length; i++) {
+      const clean = words[i].replace(/[^\wа-яё]/gi, "");
+      if (clean.length > 0) {
+        totalLength += clean.length;
+        validWords++;
+      }
+    }
+
+    return validWords === 0 ? 0 : (totalLength / validWords).toFixed(2);
+  },
+
+  statistics() {
+    return {
+      letterCount: this.letterCount(),
+      wordCount: this.wordCount(),
+      sentenceCount: this.sentenceCount(),
+      longestWord: this.longestWord(),
+      mostFrequentWord: this.mostFrequentWord(),
+      averageWordLength: this.averageWordLength(),
+      wordFrequency: this.wordFrequency()
+    };
+  }
+};
+
+9)
