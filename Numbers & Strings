@@ -1,0 +1,27 @@
+1) function isPalindrome(str) {
+  const clean = str.toLowerCase().replace(/[^a-zа-яё0-9]/gi, "");
+  return clean === clean.split("").reverse().join("");
+}
+2)
+function countVowels(str) {
+  return (str.match(/[aeiouаеёиоуыэюя]/gi) || []).length;
+}
+
+3)
+function calculate(expr) {
+  return Function(`return ${expr}`)();
+}
+4)
+function longestWord(sentence) {
+  const words = sentence.split(/\s+/);
+  return words.reduce((longest, word) =>
+    word.length > longest.length ? word : longest, ""
+  );
+}
+5)
+function isEqualIgnoreCase(a, b) {
+  return a.toLowerCase() === b.toLowerCase();
+}
+
+
+
