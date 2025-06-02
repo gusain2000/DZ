@@ -1,0 +1,37 @@
+1) const book = {
+  title: "Горе от Ума",
+  author: "Александр Грибоедов",
+  year: 1824
+};
+2)
+book.getSummary = function () {
+  return `${this.title} by ${this.author}`;
+};
+
+console.log(book.getSummary()); 
+3)for (let key in book) {
+  console.log(`${key}: ${book[key]}`);
+}
+4)
+Object.entries(book).forEach(([key, value]) => {
+  console.log(`${key}: ${value}`);
+});
+5)
+const updatedBook = { ...book, year: 2025 };
+console.log(updatedBook);
+6)
+const { title, author } = book;
+console.log(title);  
+console.log(author); 
+
+7) function keysToString(obj) {
+  return Object.keys(obj).join(", ");
+}
+
+console.log(keysToString(book)); 
+8)
+function getStringValues(obj) {
+  return Object.values(obj).filter(value => typeof value === "string");
+}
+
+console.log(getStringValues(book)); 
