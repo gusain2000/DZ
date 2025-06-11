@@ -1,0 +1,158 @@
+1)
+class Robot {
+  constructor(name) {
+    this.name = name;
+  }
+  status() {
+    console.log(`${this.name} — базовый робот`);
+  }
+}
+
+class CleaningRobot extends Robot {
+  constructor(name, cleaningMode) {
+    super(name);
+    this.cleaningMode = cleaningMode;
+  }
+  clean() {
+    console.log(`${this.name} убирает в режиме: ${this.cleaningMode}`);
+  }
+  status() {
+    super.status();
+    console.log(`Режим уборки: ${this.cleaningMode}`);
+  }
+}
+
+class SmartRobot extends CleaningRobot {
+  constructor(name, cleaningMode) {
+    super(name, cleaningMode);
+    this.connected = false;
+  }
+  connect() {
+    this.connected = true;
+    console.log(`${this.name} подключен к сети`);
+  }
+  smartClean() {
+    if (!this.connected) {
+      console.log(`Ошибка: ${this.name} не подключён`);
+      return;
+    }
+    console.log(`${this.name} умно убирает!`);
+  }
+  status() {
+    super.status();
+    console.log(`Smart: ${this.connected ? '✔️' : '❌'}`);
+  }
+}
+const r1 = new Robot("Robo");
+r1.status();
+
+const cleaner = new CleaningRobot("CleanBot", "Auto");
+cleaner.clean();
+cleaner.status();
+
+const smart = new SmartRobot("SmartVac", "Eco");
+smart.status();
+smart.connect();
+smart.smartClean();
+smart.status();
+
+
+2)
+class BankAccount {
+  #balance;
+
+  constructor(owner, initialBalance = 0) {
+    this.owner = owner;
+    this.#balance = initialBalance;
+  }
+
+  deposit(amount) {
+    if (amount > 0) {
+      this.#balance += amount;
+      console.log(`${this.owner}: пополнено ${amount}`);
+      return true;
+    }
+    console.log("Сумма депозита должна быть положительной");
+    return false;
+  }
+
+  withdraw(amount) {
+    if (amount > 0 && amount <= this.#balance) {
+      this.#balance -= amount;
+      console.log(`${this.owner}: снято ${amount}`);
+      return true;
+    }
+    console.log("Недостаточно средств или некорректная сумма");
+    return false;
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+}
+
+const acc = new BankAccount("Гусейн", 500);
+acc.deposit(200);
+acc.withdraw(100);
+console.log("Баланс:", acc.getBalance());
+
+
+
+3)
+const Flyer = {
+  fly() {
+    console.log(`${this.name} умеет летать`);
+  }
+};
+
+const Runner = {
+  run() {
+    console.log(`${this.name} умеет бегать`);
+  }
+};
+
+class Hero {
+  constructor(name) {
+    this.name = name;
+  }
+}
+Object.assign(Hero.prototype, Flyer, Runner);
+const spiderman = new Hero("Человек-паук");
+spiderman.run();
+spiderman.fly();
+
+
+4)
+class MathUtils {
+  static add(a, b) {
+    return a + b;
+  }
+
+  static sub(a, b) {
+    return a - b;
+  }
+
+  static mul(a, b) {
+    return a * b;
+  }
+
+  static div(a, b) {
+    if (b === 0) throw new Error("Деление на ноль!");
+    return a / b;
+  }
+
+  static factorial(n) {
+    if (n < 0) throw new Error("n должно быть >= 0");
+    return n <= 1 ? 1 : n * MathUtils.factorial(n - 1);
+  }
+
+  static average(nums) {
+    if (!Array.isArray(nums) || nums.length === 0)
+      throw new Error("Передайте непустой массив");
+    return nums.reduce((s, x) => s + x, 0) / nums.length;
+  }
+}
+console.log("Factorial 5:", MathUtils.factorial(5));
+console.log("Average [1,2,3]:", MathUtils.average([1, 2, 3]));
+console.log("8 / 2 =", MathUtils.div(8, 2));
+
